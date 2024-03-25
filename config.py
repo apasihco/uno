@@ -21,7 +21,7 @@
 import os
 from os import getenv
 
-TOKEN = os.getenv("TOKEN", "")
+TOKEN = "6993345701:AAHLw4mF2FbssqjEMieFIba-PKcWa1vKi0c"
 WORKERS = int(os.getenv("WORKERS", 32))
 ADMIN_LIST = os.getenv("ADMIN_LIST", "")
 

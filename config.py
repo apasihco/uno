@@ -19,7 +19,7 @@
 
 
 import os
-import getenv
+from os import getenv
 
 TOKEN = os.getenv("TOKEN", config.get("token"))
 WORKERS = int(os.getenv("WORKERS", config.get("workers", 32)))

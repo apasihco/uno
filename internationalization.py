@@ -33,7 +33,9 @@ GETTEXT_DIR = 'locales'
 class _Underscore(object):
     """Class to emulate flufl.i18n behaviour, but with plural support"""
     def __init__(self):
-        locale = 'id_ID'
+        self.translators = {
+            locale: 'id_ID'
+        }
         self.locale_stack = list()
 
     def push(self, locale):

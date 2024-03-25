@@ -39,7 +39,7 @@
       },
       "waiting_time": {
         "description": "Your Heroku account's API key",
-        "value": 120,
+        "value": "120",
         "required": false
       },
       "time_removal_after_skip": {

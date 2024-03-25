@@ -19,13 +19,7 @@
 
 
 import os
-import json
-
-try:
-    with open("config.json", "r") as f:
-        config = json.load(f)
-except FileNotFoundError:
-    config = {}
+import getenv
 
 TOKEN = os.getenv("TOKEN", config.get("token"))
 WORKERS = int(os.getenv("WORKERS", config.get("workers", 32)))

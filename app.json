@@ -1,67 +1,67 @@
 {
-    "name": "TGBNoLimit-UNO",
-    "description": "A Unobot for telegram.",
-    "keywords": [
+  "name": "TGBNoLimit-UNO",
+  "description": "A Unobot for Telegram.",
+  "keywords": [
     "Uno bot",
-    "telegram",
-    "bot",
-    ],
-    "env": {
-      "token": {
-        "description": "Telegram bot token",
-        "value": "",
-        "required": true
-      },
-      "admin_list": {
-        "description": "Admin id",
-        "value": "1471510548",
-        "required": true
-      },
-      "open_lobby": {
-        "description": "set true/false",
-        "value": "true",
-        "required": true
-      },
-      "enable_translations": {
-        "description": "Use traslation?.",
-        "value": "false",
-        "required": true
-      },
-      "workers": {
-        "description": "worker",
-        "value": "8",
-        "required": true
-      },
-      "default_gamemode": {
-        "description": "A Pyrogram v2 String Session from @STRINGSEASO_NBOT on Telegram.",
-        "value": "fast",
-        "required": true
-      },
-      "waiting_time": {
-        "description": "Your Heroku account's API key",
-        "value": "120",
-        "required": false
-      },
-      "time_removal_after_skip": {
-        "description": "Your heroku app name",
-        "value": "20",
-        "required": false
-      },
-      "min_fast_turn_time": {
-        "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": "15",
-        "required": true
-      },
-      "min_players": {
-        "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": "2",
-        "required": true
-      }
+    "Telegram",
+    "bot"
+  ],
+  "env": {
+    "token": {
+      "description": "Telegram bot token",
+      "value": "YOUR_TELEGRAM_BOT_TOKEN",
+      "required": true
     },
-    "buildpacks": [
-          {
-              "url": "heroku/python"
-          }
-      ],
-      "stack": "container"
-  }
+    "admin_list": {
+      "description": "Comma-separated list of admin IDs",
+      "value": "ADMIN_ID_1, ADMIN_ID_2",
+      "required": true
+    },
+    "open_lobby": {
+      "description": "Set to 'true' or 'false' to enable or disable open lobby",
+      "value": "true",
+      "required": true
+    },
+    "enable_translations": {
+      "description": "Set to 'true' or 'false' to enable or disable translations",
+      "value": "true",
+      "required": true
+    },
+    "workers": {
+      "description": "Number of bot workers",
+      "value": "1",
+      "required": true
+    },
+    "default_gamemode": {
+      "description": "Pyrogram v2 String Session from @STRINGSEASO_NBOT on Telegram",
+      "value": "YOUR_STRING_SESSION",
+      "required": true
+    },
+    "waiting_time": {
+      "description": "Waiting time (optional)",
+      "value": "",
+      "required": false
+    },
+    "time_removal_after_skip": {
+      "description": "Time removal after skip (optional)",
+      "value": "",
+      "required": false
+    },
+    "min_fast_turn_time": {
+      "description": "Minimum fast turn time",
+      "value": "60",
+      "required": true
+    },
+    "min_players": {
+      "description": "Minimum number of players",
+      "value": "2",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "container"
+}

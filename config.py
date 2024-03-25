@@ -22,7 +22,7 @@ import os
 from os import getenv
 
 TOKEN = os.getenv("TOKEN", "")
-WORKERS = int(os.getenv("WORKERS", 32)))
+WORKERS = int(os.getenv("WORKERS", 32))
 ADMIN_LIST = os.getenv("ADMIN_LIST", "")
 
 if isinstance(ADMIN_LIST, str):

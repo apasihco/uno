@@ -14,22 +14,22 @@
       },
       "admin_list": {
         "description": "Admin id",
-        "value": [1471510548],
+        "value": "1471510548",
         "required": true
       },
       "open_lobby": {
         "description": "set true/false",
-        "value": true,
+        "value": "true",
         "required": true
       },
       "enable_translations": {
         "description": "Use traslation?.",
-        "value": false,
+        "value": "false",
         "required": true
       },
       "workers": {
         "description": "worker",
-        "value": 8,
+        "value": "8",
         "required": true
       },
       "default_gamemode": {
@@ -44,17 +44,17 @@
       },
       "time_removal_after_skip": {
         "description": "Your heroku app name",
-        "value": 20,
+        "value": "20",
         "required": false
       },
       "min_fast_turn_time": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": 15,
+        "value": "15",
         "required": true
       },
       "min_players": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": 2,
+        "value": "2",
         "required": true
       }
     },

@@ -107,7 +107,7 @@ def do_play_card(bot, player, result_id):
 
     if len(player.cards) == 0:
         send_async(bot, chat.id,
-                   text=__("{name} won!", multi=game.translate)
+                   text=__("{name} pemenang!,{name2} adalah kacung :v", multi=game.translate)
                    .format(name=user.first_name))
 
         if us.stats:

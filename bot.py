@@ -69,7 +69,7 @@ def notify_me(update: Update, context: CallbackContext):
 
 @user_locale
 def new_game(update: Update, context: CallbackContext):
-    """Handler for the /new command"""
+    """Handler for the /uno command"""
     chat_id = update.message.chat_id
 
     if update.message.chat.type == 'private':
@@ -92,7 +92,7 @@ def new_game(update: Update, context: CallbackContext):
         game.mode = DEFAULT_GAMEMODE
         send_async(context.bot, chat_id,
                    text=_("Created a new game! Join the game with /join "
-                          "and start the game with /start"))
+                          "and start the game with /gas"))
 
 
 @user_locale
@@ -117,12 +117,12 @@ def kill_game(update: Update, context: CallbackContext):
 
         try:
             gm.end_game(chat, user)
-            send_async(context.bot, chat.id, text=__("Game ended!", multi=game.translate))
+            send_async(context.bot, chat.id, text=__("Udahan kek hubungan lu!", multi=game.translate))
 
         except NoGameInChatError:
             send_async(context.bot, chat.id,
                        text=_("The game is not started yet. "
-                              "Join the game with /join and start the game with /start"),
+                              "Join the game with /join and start the game with /gas"),
                        reply_to_message_id=update.message.message_id)
 
     else:
@@ -149,13 +149,13 @@ def join_game(update: Update, context: CallbackContext):
     except NoGameInChatError:
         send_async(context.bot, chat.id,
                    text=_("No game is running at the moment. "
-                          "Create a new game with /new"),
+                          "Create a new game with /uno"),
                    reply_to_message_id=update.message.message_id)
 
     except AlreadyJoinedError:
         send_async(context.bot, chat.id,
                    text=_("You already joined the game. Start the game "
-                          "with /start"),
+                          "with /gas"),
                    reply_to_message_id=update.message.message_id)
 
     except DeckEmptyError:
@@ -197,7 +197,7 @@ def leave_game(update: Update, context: CallbackContext):
 
     except NotEnoughPlayersError:
         gm.end_game(chat, user)
-        send_async(context.bot, chat.id, text=__("Game ended!", multi=game.translate))
+        send_async(context.bot, chat.id, text=__("Udahan kek hubungan lu!", multi=game.translate))
 
     else:
         if game.started:
@@ -231,14 +231,14 @@ def kick_player(update: Update, context: CallbackContext):
     except (KeyError, IndexError):
             send_async(context.bot, chat.id,
                    text=_("No game is running at the moment. "
-                          "Create a new game with /new"),
+                          "Create a new game with /uno"),
                    reply_to_message_id=update.message.message_id)
             return
 
     if not game.started:
         send_async(context.bot, chat.id,
                    text=_("The game is not started yet. "
-                          "Join the game with /join and start the game with /start"),
+                          "Join the game with /join and start the game with /gas"),
                    reply_to_message_id=update.message.message_id)
         return
 
@@ -259,7 +259,7 @@ def kick_player(update: Update, context: CallbackContext):
                 gm.end_game(chat, user)
                 send_async(context.bot, chat.id,
                                 text=_("{0} was kicked by {1}".format(display_name(kicked), display_name(user))))
-                send_async(context.bot, chat.id, text=__("Game ended!", multi=game.translate))
+                send_async(context.bot, chat.id, text=__("Udahan kek hubungan lu!", multi=game.translate))
                 return
 
             send_async(context.bot, chat.id,
@@ -337,7 +337,7 @@ def status_update(update: Update, context: CallbackContext):
             pass
         except NotEnoughPlayersError:
             gm.end_game(chat, user)
-            send_async(context.bot, chat.id, text=__("Game ended!",
+            send_async(context.bot, chat.id, text=__("Udahan kek hubungan lu!",
                                              multi=game.translate))
         else:
             send_async(context.bot, chat.id, text=__("Removing {name} from the game",
@@ -348,7 +348,7 @@ def status_update(update: Update, context: CallbackContext):
 @game_locales
 @user_locale
 def start_game(update: Update, context: CallbackContext):
-    """Handler for the /start command"""
+    """Handler for the /gas command"""
 
     if update.message.chat.type != 'private':
         chat = update.message.chat
@@ -358,7 +358,7 @@ def start_game(update: Update, context: CallbackContext):
         except (KeyError, IndexError):
             send_async(context.bot, chat.id,
                        text=_("There is no game running in this chat. Create "
-                              "a new one with /new"))
+                              "a new one with /uno"))
             return
 
         if game.started:

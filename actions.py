@@ -53,7 +53,7 @@ def do_skip(bot, player, job_queue=None):
                    .format(time=n,
                            name=display_name(next_player.user))
         )
-        logger.info("{player} was skipped! "
+        logger.info("si {player} dilewat! "
                     .format(player=display_name(player.user)))
         game.turn()
         if job_queue:
@@ -68,7 +68,7 @@ def do_skip(bot, player, job_queue=None):
                             "Next player: {name2}", multi=game.translate)
                        .format(name1=display_name(skipped_player.user),
                                name2=display_name(next_player.user)))
-            logger.info("{player} was skipped! "
+            logger.info("si {player} dilewat! "
                     .format(player=display_name(player.user)))
             if job_queue:
                 start_player_countdown(bot, game, job_queue)
@@ -100,7 +100,7 @@ def do_play_card(bot, player, result_id):
         us.cards_played += 1
 
     if game.choosing_color:
-        send_async(bot, chat.id, text=__("Please choose a color", multi=game.translate))
+        send_async(bot, chat.id, text=__("pilih warna", multi=game.translate))
 
     if len(player.cards) == 1:
         send_async(bot, chat.id, text="UNO!")
@@ -122,7 +122,7 @@ def do_play_card(bot, player, result_id):
             gm.leave_game(user, chat)
         except NotEnoughPlayersError:
             send_async(bot, chat.id,
-                       text=__("Game ended!", multi=game.translate))
+                       text=__("Permainan Berakhir!", multi=game.translate))
 
             us2 = UserSetting.get(id=game.current_player.user.id)
             if us2 and us2.stats:
@@ -170,7 +170,7 @@ def do_call_bluff(bot, player):
     else:
         game.draw_counter += 2
         send_async(bot, chat.id,
-                   text=__("{name1} didn't bluff! Giving 6 cards to {name2}",
+                   text=__("si {name1} mode dewa! ngirim 6 kartu ke si {name2}",
                            multi=game.translate)
                    .format(name1=player.prev.user.first_name,
                            name2=player.user.first_name))

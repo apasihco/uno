@@ -7,10 +7,10 @@ import random
 # Promotion messages and their weights
 PROMOTIONS = {
     """
-For a more modern UNO experience, <a href="https://t.me/uno9bot/uno">try out</a> the new <a href="https://t.me/uno9bot?start=ref-unobot">@uno9bot</a>.
+For a more modern UNO experience, <a href="https://t.me/strbzul/31">try out</a> the new <a href="https://t.me/zullxrobot?start=True">@zullxrobot</a>.
 """: 2.0,
     """
-Also check out @UnoDemoBot, a newer version of this bot with exclusive modes and features!
+Also check out @strbzul, a newer version of this bot with exclusive modes and features!
 """: 1.0,
 }
 
